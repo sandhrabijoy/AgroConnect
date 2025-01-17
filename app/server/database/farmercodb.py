@@ -39,3 +39,10 @@ def get_id_farmer_company(db:Session,id:int):
      if farmer_company:
         return farmer_company
      return None
+def delete_company(id:int,db:Session)->bool:
+     existing_company = db.query(Farmer).filter(Farmer.id == id).first()
+     if existing_company:
+          db.delete(existing_company)
+          db.commit()
+          return True
+     return False
