@@ -14,3 +14,13 @@ def farmer_company_helper(farmerData:Farmer) -> dict:
 def getFarmerCompanyData(db:Session) ->Farmer:
     farmerData = db.query(Farmer).all()
     return farmerData
+
+def addFarmerCompanyData(companyData:dict,db:Session)->Farmer:
+    try:
+        new_data = Farmer(**companyData)   
+        db.add(new_data)
+        db.commit()
+        db.refresh(new_data)
+        return new_data
+    except:
+        return "Unable to add the data to the database"
