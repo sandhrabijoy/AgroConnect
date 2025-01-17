@@ -1,8 +1,9 @@
-from database.farmercodb import farmer_company_helper,getFarmerCompanyData,addFarmerCompanyData,get_id_farmer_company,update_farmer_company,delete_company
+from app.server.database.farmercodb import farmer_company_helper,getFarmerCompanyData
+from app.server.database.farmercodb import addFarmerCompanyData,get_id_farmer_company,update_farmer_company,delete_company
 from sqlalchemy.orm import Session
-from database.database import get_db
+from app.server.database.database import get_db
 from fastapi import APIRouter,Depends
-from models.farmercomodel import Farmer,UpdatedFarmerSchema
+from app.server.models.farmercomodel import Farmer,UpdatedFarmerSchema,FarmerSchema
 
 router = APIRouter()
 
@@ -13,7 +14,7 @@ def get_farmer_companies(db:Session = Depends(get_db)):
         return [farmer_company_helper(fc) for fc in farmer_companies]
     
 @router.post("/",response_description="Data added successfully")
-def add_farmer_company(data:Farmer, db:Session = Depends(get_db)):
+def add_farmer_company(data:FarmerSchema, db:Session = Depends(get_db)):
     added = addFarmerCompanyData(data.dict(),db)
     return added     
 

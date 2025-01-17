@@ -1,5 +1,6 @@
-from models.farmercomodel import Farmer
+from app.server.models.farmercomodel import Farmer
 from sqlalchemy.orm import Session
+
 def farmer_company_helper(farmerData:Farmer) -> dict:
     return {
         "id":farmerData.id,
@@ -11,6 +12,7 @@ def farmer_company_helper(farmerData:Farmer) -> dict:
         "updated_at": farmerData.updated_at,
         "updated_by":  farmerData.updated_by,
     }
+
 def getFarmerCompanyData(db:Session) ->Farmer:
     farmerData = db.query(Farmer).all()
     return farmerData
@@ -24,6 +26,7 @@ def addFarmerCompanyData(companyData:dict,db:Session)->Farmer:
         return new_data
     except:
         return "Unable to add the data to the database"
+    
 def update_farmer_company(db:Session,id:int,data:dict,)->bool:
         existing_farmer_company = db.query(Farmer).filter(Farmer.id == id).first()
         if not existing_farmer_company:
@@ -39,6 +42,7 @@ def get_id_farmer_company(db:Session,id:int):
      if farmer_company:
         return farmer_company
      return None
+
 def delete_company(id:int,db:Session)->bool:
      existing_company = db.query(Farmer).filter(Farmer.id == id).first()
      if existing_company:

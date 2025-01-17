@@ -8,7 +8,7 @@ Base=declarative_base()
 
 #ORM model for cultivator
 class Cultivator(Base):
-    __tablename__:'cultivator'
+    __tablename__='cultivator'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
     companyid=Column(Integer,ForeignKey("farmercomodel.id") ,nullable=False)
