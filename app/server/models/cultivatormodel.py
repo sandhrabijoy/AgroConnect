@@ -2,7 +2,7 @@ from typing import Optional
 from datetime import date,datetime
 from pydantic import BaseModel,Field
 from sqlalchemy.orm import sessionmaker,declarative_base,Session
-from sqlalchemy import create_engine,Column,Integer,String, Boolean, DateTime
+from sqlalchemy import create_engine,Column,Integer,String, Boolean, DateTime,ForeignKey
 
 Base=declarative_base()
 
@@ -11,7 +11,7 @@ class Cultivator(Base):
     __tablename__:'cultivator'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
-    companyid=Column(Integer,foreign_key=True, nullable=False)
+    companyid=Column(Integer,ForeignKey("farmercomodel.id") ,nullable=False)
     active=Column(Boolean,nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     created_by = Column(String, nullable=False)
