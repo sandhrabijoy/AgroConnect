@@ -6,12 +6,12 @@ from sqlalchemy import create_engine,Column,Integer,String, Boolean, DateTime
 
 Base=declarative_base()
 
-#ORM model for farmer company
-class Farmer(Base):
-    __tablename__:'farmercompany'
+#ORM model for cultivator
+class Cultivator(Base):
+    __tablename__:'cultivator'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
-    code=Column(Integer, nullable=False)
+    companyid=Column(Integer,foreign_key=True, nullable=False)
     active=Column(Boolean,nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     created_by = Column(String, nullable=False)
@@ -19,10 +19,10 @@ class Farmer(Base):
     updated_by = Column(String, nullable=False)
 
 
-# Creation of initial farmer structure
-class FarmerSchema(BaseModel):
+# Creation of initial cultivator structure
+class CultivatorSchema(BaseModel):
     name: str
-    code:int
+    companyid:int
     active:bool
     created_at: date
     created_by: str
@@ -34,9 +34,9 @@ class FarmerSchema(BaseModel):
         orm_mode = True
 
 # Update schema for PUT operation
-class UpdatedFarmerSchema(BaseModel):
+class UpdatedCultivatorSchema(BaseModel):
     name: Optional[str]
-    code:Optional[int]
+    companyid:Optional[int]
     active:Optional[bool]
     created_at: Optional[date]
     created_by: Optional[str]
