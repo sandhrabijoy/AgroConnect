@@ -24,3 +24,18 @@ def addFarmerCompanyData(companyData:dict,db:Session)->Farmer:
         return new_data
     except:
         return "Unable to add the data to the database"
+def update_farmer_company(db:Session,id:int,data:dict,)->bool:
+        existing_farmer_company = db.query(Farmer).filter(Farmer.id == id).first()
+        if not existing_farmer_company:
+             return False
+        for key, value in data.items():
+             setattr(existing_farmer_company,key,value)
+        db.commit()
+        db.refresh(existing_farmer_company)
+        return True             
+
+def get_id_farmer_company(db:Session,id:int):
+     farmer_company = db.query(Farmer).filter(Farmer.id == id).first()
+     if farmer_company:
+        return farmer_company
+     return None
