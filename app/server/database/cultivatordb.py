@@ -4,8 +4,8 @@ from sqlalchemy.orm import Session
 def cultivator_company_helper(CultivatorData:Cultivator) -> dict:
     return {
         "id":CultivatorData.id,
+        "companyid":CultivatorData.companyid,
         "name":CultivatorData.name,
-        "code":CultivatorData.code,
         "active":CultivatorData.active,
         "created_at": CultivatorData.created_at,
         "created_by": CultivatorData.created_by,
