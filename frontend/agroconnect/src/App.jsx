@@ -10,6 +10,8 @@ import Button from './atoms/button/Button';
 import Image from './atoms/Images/Image'
 import Navigation from './atoms/Navigation/Navigation'
 import BasicTable from'./atoms/Table/Table'
+import BottomNav from './atoms/BottomNav/BottomNav'
+
 function App() {
 
 
@@ -31,12 +33,15 @@ function App() {
           <SmallHead className= "b-heading"/>         
           <div className='bar'>
             <Dropdown/>
-            <Button className="submit-button" text="SUBMIT"/>
-          </div>
+            <Button className="submit-button" text="SUBMIT"/></div>
+          <div className='table-size'><center>
           <BasicTable/>
+          </center>
         </div>
+       <BottomNav/>
+
        
-      
+    </div>
     </>
   );
 }
