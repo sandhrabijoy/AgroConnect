@@ -34,11 +34,11 @@ export default function BasicTable() {
             <TableRow className='heading' sx={{ fontWeight:"bold"} }
               key={row.companyid}>
              
-              <TableCell component="th" scope="row"className='heading'  sx={{ fontWeight:"bold",fontSize:"20px"} }>
+              <TableCell component="th" scope="row"className='heading'  sx={{ fontWeight:"",fontSize:"20px"} }>
                 {row.id}
               </TableCell>
-              <TableCell align="right"  className='heading'  sx={{ fontWeight:"bold", fontSize:"20px"} }>{row.Name}</TableCell>
-              <TableCell align="right" className='heading'  sx={{ fontWeight:"bold", fontSize:"20px"} }>{row.active}</TableCell>
+              <TableCell align="right"  className='heading'  sx={{ fontWeight:"", fontSize:"20px"} }>{row.Name}</TableCell>
+              <TableCell align="right" className='heading'  sx={{ fontWeight:"", fontSize:"20px"} }>{row.active}</TableCell>
             
             </TableRow>
           ))}
