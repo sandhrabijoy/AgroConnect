@@ -2,10 +2,10 @@
 .descr-style{
     font-family: 'Inconsolata', monospace;
     color:#2A4704;
-    font-size: 180%;
+    font-size: 150%;
     display: flex;
     justify-content: center;
     border:2px solid red;
-    width: 20%;
+    width: 40%;
     align-items: center;
 }

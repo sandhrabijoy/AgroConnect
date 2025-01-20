@@ -6,7 +6,7 @@ import Descr from '../descr/Descr';
 
 const Image = (props) => {
   return (
-    <div className={props.className}>
+    <div className="image-container">
       <img src={leftimage} alt="left image" className="left-image" />
       <Descr />
       <img src={rightimage} alt="right image" className="right-image" />
