@@ -8,6 +8,8 @@ import SmallHead from './atoms/SmallHead/SmallHead'
 import Button from './atoms/button/Button';
 import Descr from './atoms/descr/Descr'
 import Image from './atoms/Images/Image'
+import Navigation from './atoms/Navigation/Navigation'
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -37,6 +39,7 @@ function App() {
             <SmallHead className="s-heading"/>
             <Descr/>
             <Image/>
+            <Navigation/>
           </div>
         </div>
         <p>
