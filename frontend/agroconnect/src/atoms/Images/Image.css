@@ -1,8 +1,12 @@
 .left-image{
     width: 25px;
     height:40px;
+    display:flex;
+    justify-content: left;
 }
 .right-image{
     width:20px;
     height:40px;
+    display: flex;
+    justify-content: right;
 }

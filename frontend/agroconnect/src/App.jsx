@@ -9,46 +9,34 @@ import Button from './atoms/button/Button';
 import Descr from './atoms/descr/Descr'
 import Image from './atoms/Images/Image'
 import Navigation from './atoms/Navigation/Navigation'
-
+import BasicTable from'./atoms/Table/Table'
 function App() {
-  const [count, setCount] = useState(0);
+
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <div className="App">
-          
+      </div> */}
+          <div className="App">
+          <Navigation />
+          <Image/>
+          <Descr/>
+          <Heading className="big-heading"></Heading>
+          <SmallHead className= "b-heading"/>         
           <div className='bar'>
             <Dropdown/>
-            <Button/>
-            <Heading/>
-            <Heading className="big-heading"></Heading>
-            <Heading className="small-heading"></Heading>
-            <SmallHead className='b-heading'/>
-            <SmallHead className="s-heading"/>
-            <Descr/>
-            <Image/>
-            <Navigation/>
+            <Button className="submit-button" text="SUBMIT"/>
           </div>
+          <BasicTable/>
         </div>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+       
+      
     </>
   );
 }
