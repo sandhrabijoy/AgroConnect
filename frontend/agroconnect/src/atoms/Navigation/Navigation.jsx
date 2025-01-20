@@ -22,11 +22,11 @@ export default function Navigationbar(){
                 <Toolbar sx={{flexGrow:1, backgroundColor: "#2A4704"}}>
                     
                         
-                <Typography variant="h6" component="div" sx={{ lineHeight: '50px' }}>
+                <Typography variant="h6" component="div" sx={{ lineHeight: '50px',paddingRight:'850px'}}>
                             <Heading className="small-heading"/>
                             <SmallHead className="s-heading"/>
                         </Typography>
-                        <div className='home-contact'sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}> 
+                        <div className='home-contact'sx={{ display: 'flex'}}> 
                             <Button className='home-button' text="HOME"></Button> 
                             <Button className='home-button' text="CONTACT"></Button>
                         </div>                    
