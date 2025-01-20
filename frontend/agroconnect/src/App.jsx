@@ -20,17 +20,18 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>AgroConnect</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <div className="App">
-          <Button />
+          
           <div className='bar'>
             <Dropdown/>
             <Button/>
             <Heading/>
+            <Heading className="big-heading"></Heading>
+            <Heading className="small-heading"></Heading>
           </div>
         </div>
         <p>
