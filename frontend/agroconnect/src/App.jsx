@@ -4,7 +4,6 @@ import Heading from './atoms/Heading/Heading';
 import Dropdown from './atoms/dropdown/Dropdown';
 import SmallHead from './atoms/SmallHead/SmallHead'
 import Button from './atoms/button/Button';
-// import Descr from './atoms/descr/Descr'
 import Image from './atoms/Images/Image'
 import Navigation from './atoms/Navigation/Navigation'
 import BasicTable from'./atoms/Table/Table'
