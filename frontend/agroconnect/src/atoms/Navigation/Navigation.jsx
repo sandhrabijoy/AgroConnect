@@ -18,7 +18,7 @@ export default function Navigationbar(){
                 <Toolbar sx={{flexGrow:1, backgroundColor: "#2A4704"}}>
                     
                         
-                        <Typography variant="h6" component="div" >
+                        <Typography variant="h6" component="div" style={{lineHeight:"50px"}}>
                             <Heading className="small-heading"/>
                             <SmallHead className="s-heading"/>
                         </Typography>
