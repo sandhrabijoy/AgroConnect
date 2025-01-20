@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 const Dropdown = () => {
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'flex-end', paddingLeft: '170px',paddingRight:'10px'}} >
       <Box sx={{borderBottom:0}}>
      
       <FormControl fullWidth>
