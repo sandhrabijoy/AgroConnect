@@ -7,6 +7,19 @@ app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
 
+origins=[
+"http://localhost:3000",
+"http://localhost:8000",
+
+]
+app.add_middleware(
+CORSMiddleware,
+allow_origins=["*"],
+allow_credentials=True,
+allow_methods=["*"],  
+allow_headers=["*"],  
+)
+
 app.include_router(FCRouter,tags=["farmercompany"],prefix="/farmer")
 app.include_router(CultivatorRouter,tags=["cultivator"],prefix="/cultivator")
 @app.get("/", tags=["Root"])
