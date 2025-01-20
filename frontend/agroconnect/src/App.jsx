@@ -2,6 +2,8 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import Heading from './atoms/Heading/Heading';
+import Dropdown from './atoms/dropdown/Dropdown';
 
 import Button from './atoms/button/Button';
 
@@ -25,6 +27,11 @@ function App() {
         </button>
         <div className="App">
           <Button />
+          <div className='bar'>
+            <Dropdown/>
+            <Button/>
+            <Heading/>
+          </div>
         </div>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
