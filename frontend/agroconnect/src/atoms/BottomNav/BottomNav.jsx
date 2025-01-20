@@ -13,8 +13,8 @@ const Navigation = (Navigationbar) => {
 
 export default function Navigationbar(){
     return(
-        <Box >
-            <AppBar position="static" >
+        <Box className ="bottom-nav" >
+            <AppBar position="static" width ="100%" >
                 <Toolbar sx={{backgroundColor: "#2A4704"}}>
                          
                 </Toolbar>

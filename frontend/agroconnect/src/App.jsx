@@ -17,18 +17,10 @@ function App() {
 
   return (
     <>
-      {/* <div>
-        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div> */}
+     
           <div className="App">
           <Navigation />
           <Image/>
-          {/* <Descr/> */}
           <Heading className="big-heading"></Heading>
           <SmallHead className= "b-heading"/>         
           <div className='bar'>

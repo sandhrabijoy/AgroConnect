@@ -16,16 +16,17 @@ const Navigation = (Navigationbar) => {
 }
 export default function Navigationbar(){
     return(
-        <Box >
-            <AppBar position="static" >
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="fixed" sx={{ width: '100%' }}>
+
                 <Toolbar sx={{flexGrow:1, backgroundColor: "#2A4704"}}>
                     
                         
-                        <Typography variant="h6" component="div" style={{lineHeight:"50px"}}>
+                <Typography variant="h6" component="div" sx={{ lineHeight: '50px' }}>
                             <Heading className="small-heading"/>
                             <SmallHead className="s-heading"/>
                         </Typography>
-                        <div className='home-contact'> 
+                        <div className='home-contact'sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}> 
                             <Button className='home-button' text="HOME"></Button> 
                             <Button className='home-button' text="CONTACT"></Button>
                         </div>                    
