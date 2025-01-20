@@ -7,7 +7,7 @@ import Dropdown from './atoms/dropdown/Dropdown';
 import SmallHead from './atoms/SmallHead/SmallHead'
 import Button from './atoms/button/Button';
 import Descr from './atoms/descr/Descr'
-
+import Image from './atoms/Images/Image'
 function App() {
   const [count, setCount] = useState(0);
 
@@ -36,6 +36,7 @@ function App() {
             <SmallHead className='b-heading'/>
             <SmallHead className="s-heading"/>
             <Descr/>
+            <Image/>
           </div>
         </div>
         <p>

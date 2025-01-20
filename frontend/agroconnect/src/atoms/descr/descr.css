@@ -3,4 +3,6 @@
     font-family: 'Inconsolata', monospace;
     color:#2A4704;
     font-size: medium;
+    display: flex;
+    justify-content: center;
 }
