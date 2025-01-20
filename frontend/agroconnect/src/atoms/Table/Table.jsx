@@ -12,7 +12,7 @@ function createData(id, Name, active) {
 }
 
 const rows = [
-  createData(1,'ABD','Active'),
+  createData(1,'ABC','Active'),
   createData(2 , 'XYZ','Non-Active'),
   createData(3, 'PQR', 'Active'),
 ];
@@ -23,23 +23,22 @@ export default function BasicTable() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>ID </TableCell>
-            <TableCell align="right">NAME</TableCell>
-            <TableCell align="right">ACTIVE&nbsp;</TableCell>
+            <TableCell className='heading' sx={{color:"rgb(42, 71, 4)" , fontWeight:"bold", fontSize:"30px"} }>ID </TableCell>
+            <TableCell align="right"  className='heading' sx={{color:"rgb(42, 71, 4)" , fontWeight:"bold", fontSize:"30px"} }>NAME</TableCell>
+            <TableCell align="right" className='heading'sx={{color:"rgb(42, 71, 4)" , fontWeight:"bold", fontSize:"30px"} }>ACTIVE&nbsp;</TableCell>
         
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow
-              key={row.companyid}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
+            <TableRow className='heading' sx={{ fontWeight:"bold"} }
+              key={row.companyid}>
+             
+              <TableCell component="th" scope="row"className='heading'  sx={{ fontWeight:"bold",fontSize:"20px"} }>
                 {row.id}
               </TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.active}</TableCell>
+              <TableCell align="right"  className='heading'  sx={{ fontWeight:"bold", fontSize:"20px"} }>{row.Name}</TableCell>
+              <TableCell align="right" className='heading'  sx={{ fontWeight:"bold", fontSize:"20px"} }>{row.active}</TableCell>
             
             </TableRow>
           ))}
