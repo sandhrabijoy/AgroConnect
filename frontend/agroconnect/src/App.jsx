@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import Heading from './atoms/Heading/Heading';
 import Dropdown from './atoms/dropdown/Dropdown';
@@ -25,7 +23,7 @@ function App() {
           <SmallHead className= "b-heading"/>         
           <div className='bar'>
             <Dropdown/>
-            <Button className="submit-button" text="SUBMIT"/></div>
+            <Button  className="button-style" text="SUBMIT"/></div>
           <div className='table-size'><center>
           <BasicTable/>
           </center>
