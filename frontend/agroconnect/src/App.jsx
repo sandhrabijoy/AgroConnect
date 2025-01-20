@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Heading from './atoms/Heading/Heading';
 import Dropdown from './atoms/dropdown/Dropdown';
-
+import SmallHead from './atoms/SmallHead/SmallHead'
 import Button from './atoms/button/Button';
 
 function App() {
@@ -32,6 +32,8 @@ function App() {
             <Heading/>
             <Heading className="big-heading"></Heading>
             <Heading className="small-heading"></Heading>
+            <SmallHead className='b-heading'/>
+            <SmallHead className="s-heading"/>
           </div>
         </div>
         <p>
