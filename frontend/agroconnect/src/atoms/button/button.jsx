@@ -1,5 +1,5 @@
-import React from 'react'
-import "./button.css"
+import React from 'react';
+import './Button.css'; 
 
 const Button = () => {
   return (
@@ -7,5 +7,7 @@ const Button = () => {
       <button>SUBMIT</button>
       <button className='button-style'>SUBMIT</button>
     </div>
-  )
-}
+  );
+};
+
+export default Button;
