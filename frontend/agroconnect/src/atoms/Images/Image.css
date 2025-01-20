@@ -1,12 +1,27 @@
-.left-image{
-    width: 25px;
-    height:40px;
-    display:flex;
-    justify-content: left;
+/* Main container styles */
+.image-container {
+  display: flex; /* Align items horizontally */
+  justify-content: space-between; /* Space out images and description */
+  align-items: center; /* Align items vertically */
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+  gap: 20px; /* Add spacing between items */
+  max-width: 100%; /* Ensure the container fits the screen width */
+  margin: auto; /* Center the container horizontally */
 }
-.right-image{
-    width:20px;
-    height:40px;
-    display: flex;
-    justify-content: right;
+
+/* Styling for images */
+.left-image,
+.right-image {
+  max-width: 30%; /* Restrict image width to 30% of the container */
+  max-height: 30vh; /* Restrict image height to 30% of the viewport */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure images behave as block elements */
+}
+
+/* Description styling (optional) */
+.descr {
+  flex: 1; /* Make the description take up the remaining space */
+  text-align: center; /* Center-align the text */
+  padding: 10px;
 }
