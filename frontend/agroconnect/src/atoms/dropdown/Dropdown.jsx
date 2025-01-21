@@ -5,8 +5,10 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-const Dropdown = () => {
+const Dropdown = ({data}) => {
+  console.log('from dropdown',data)
   return (
+
     <div style={{ display: 'flex', justifyContent: 'flex-end', paddingLeft: '170px',paddingRight:'10px'}} >
       <Box sx={{borderBottom:0}}>
      
@@ -19,7 +21,12 @@ const Dropdown = () => {
         
         label="Select Farmer Company"
         >
-            
+          {
+          data.map((options)=>(
+          <MenuItem key={options.id} value={options.id}>
+            {options.name}
+          </MenuItem>
+        ))} 
         </Select>
         </FormControl>
         </Box>
