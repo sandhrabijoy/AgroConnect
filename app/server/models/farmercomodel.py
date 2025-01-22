@@ -1,7 +1,7 @@
 from typing import Optional
 from datetime import date,datetime
 from pydantic import BaseModel,Field
-from sqlalchemy.orm import sessionmaker,declarative_base,Session
+from sqlalchemy.orm import relationship, sessionmaker,declarative_base,Session
 from sqlalchemy import create_engine,Column,Integer,String, Boolean, DateTime
 from app.server.database.database import Base
 
@@ -16,6 +16,8 @@ class Farmer(Base):
     created_by = Column(String, nullable=False)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
     updated_by = Column(String, nullable=False)
+    # Relationship to Cultivators
+    cultivators = relationship("Cultivator", back_populates="farmer")
 
 
 # Creation of initial farmer structure

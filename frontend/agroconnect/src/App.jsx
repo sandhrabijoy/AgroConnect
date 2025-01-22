@@ -25,7 +25,7 @@ function App() {
         console.log(response)
         console.log(response.data);
         setFarmerOptions(response.data);
-        console.log(lotOptions)
+        console.log(farmerOptions)
       })
       .catch((error) => {
         console.error("There was an error!", error);
