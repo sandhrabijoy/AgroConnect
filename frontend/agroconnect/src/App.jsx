@@ -64,9 +64,10 @@ function App() {
       
       const data = await result.json(); 
       console.log(data); 
-      
-      const newdata = data; 
+      // const datas = Array.isArray(data) ? data[0] : [];
+      const newdata = data.data; 
       console.log(newdata); 
+      setCultivators(newdata)
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -87,7 +88,7 @@ function App() {
       </div>
       <div className="table-size">
         <center>
-          <BasicTable />
+          <BasicTable cultivators={cultivators}/>
         </center>
       </div>
       <BottomNav />

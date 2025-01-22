@@ -17,7 +17,19 @@ const rows = [
   createData(3, 'PQR', 'Active'),
 ];
 
-export default function BasicTable() {
+export default function BasicTable({cultivators}) {
+  console.log(cultivators)
+  
+    // Extract the map logic into a variable
+    const tableRows = cultivators[0]?.map((cultivator) => (
+      <TableRow key={cultivator.id}>
+        <TableCell component="th" scope="row">
+          {cultivator.id}
+        </TableCell>
+        <TableCell align="right">{cultivator.name}</TableCell>
+        <TableCell align="right">{cultivator.active ? 'Active' : 'Inactive'}</TableCell>
+      </TableRow>
+    ));
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -30,7 +42,7 @@ export default function BasicTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {/* {rows.map((row) => (
             <TableRow className='heading' sx={{ fontWeight:"bold"} }
               key={row.companyid}>
              
@@ -41,7 +53,8 @@ export default function BasicTable() {
               <TableCell align="right" className='heading'  sx={{ fontWeight:"", fontSize:"20px"} }>{row.active}</TableCell>
             
             </TableRow>
-          ))}
+          ))} */}
+          {tableRows}
         </TableBody>
       </Table>
     </TableContainer>
