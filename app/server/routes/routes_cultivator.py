@@ -3,6 +3,7 @@ from app.server.database.cultivatordb import addCultivatorData,get_id_cultivator
 from sqlalchemy.orm import Session
 from app.server.database.database import get_db
 from fastapi import APIRouter,Depends
+from app.server.models.cultivatormodel import ResponseModel
 from app.server.models.cultivatormodel import Cultivator,UpdatedCultivatorSchema,CultivatorSchema
 
 router = APIRouter()
@@ -13,6 +14,16 @@ def get_cultivator_companies(db:Session = Depends(get_db)):
     if cultivator_companies:
         return [cultivator_company_helper(fc) for fc in cultivator_companies]
     
+@router.get("/by_company/{company_id}", response_description="Cultivators by Farmer Company")
+def get_cultivators_by_company(company_id: int, db: Session = Depends(get_db)):
+    """
+    Fetch cultivators based on farmer company ID.
+    """
+    cultivators = db.query(Cultivator).filter(Cultivator.companyid == company_id).all()
+    if cultivators:
+
+        return ResponseModel([cultivator_company_helper(cultivator) for cultivator in cultivators],"cultivator obtained")
+    return {"message": f"No cultivators found for Farmer Company ID {company_id}"}
 
 
 @router.post("/",response_description="Cultivator Data added successfully")

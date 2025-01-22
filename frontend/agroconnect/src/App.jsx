@@ -41,19 +41,36 @@ function App() {
   }, [farmerOptions]);
 
   
-  useEffect(() => {
-    if (selectedFarmer) {
-      axios
-        .get(`http://127.0.0.1:8000/cultivators/by_company/${selectedFarmer}`)
-        .then((response) => {
-          setCultivators(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching cultivators:", error);
-        });
+  // (() => {
+  //   if (selectedFarmer) {
+  //     axios
+  //       .get(`http://127.0.0.1:8000/cultivators/by_company/${selectedFarmer}`)
+  //       .then((response) => {
+  //         setCultivators(response.data);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching cultivators:", error);
+  //       });
+  //   }
+  // }, [selectedFarmer]);
+
+  async function handleOnclick() {
+    try {
+      const result = await fetch(`http://127.0.0.1:8000/cultivator/by_company/${selectedFarmer}`);
+      
+      if (!result.ok) {
+        throw new Error("No output");
+      }
+      
+      const data = await result.json(); 
+      console.log(data); 
+      
+      const newdata = data; 
+      console.log(newdata); 
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
-  }, [selectedFarmer]);
-  
+  }
   return (
     <div className="App">
       <Navigation />
@@ -63,9 +80,10 @@ function App() {
       <div className="bar">
         <Dropdown 
         data={farmerOptions}
+        setSelectedFarmer={setSelectedFarmer}
     
          />
-        <Button className="button-style" text="SUBMIT" onClick={handleSubmit} />
+        <Button className="button-style" text="SUBMIT" Onclick={handleOnclick}  />
       </div>
       <div className="table-size">
         <center>

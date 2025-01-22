@@ -5,7 +5,8 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-const Dropdown = ({data}) => {
+
+const Dropdown = ({data,setSelectedFarmer}) => {
   console.log('from dropdown',data)
   return (
 
@@ -19,6 +20,11 @@ const Dropdown = ({data}) => {
         labelId="demo-simple-select-label"
         id="demo-simple-select"
         
+        onChange={(e) => {
+          const selectedId = e.target.value;
+          setSelectedFarmer(selectedId);  // Update the selected ID here
+          field.onChange(e);  // Ensures the react-hook-form's value is updated
+        }}
         label="Select Farmer Company"
         >
           {
