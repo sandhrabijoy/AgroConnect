@@ -12,11 +12,15 @@ import axios from 'axios';
 
 function App() {
   const [farmerOptions, setFarmerOptions] = useState([]);
+  const[selectedFarmer,setSelectedFarmer]=useState(null);
+  const[cultivators,setCultivators]=useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Button clicked");
+    console.log("Selected Farmer ID:", selectedFarmer);
+    console.log("Cultivators Data:", cultivators);
   };
+
 
   useEffect(() => {
     axios
@@ -36,6 +40,20 @@ function App() {
     console.log(farmerOptions); 
   }, [farmerOptions]);
 
+  
+  useEffect(() => {
+    if (selectedFarmer) {
+      axios
+        .get(`http://127.0.0.1:8000/cultivators/by_company/${selectedFarmer}`)
+        .then((response) => {
+          setCultivators(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching cultivators:", error);
+        });
+    }
+  }, [selectedFarmer]);
+  
   return (
     <div className="App">
       <Navigation />
@@ -43,7 +61,10 @@ function App() {
       <Heading className="big-heading" />
       <SmallHead className="b-heading" />
       <div className="bar">
-        <Dropdown data={farmerOptions} />
+        <Dropdown 
+        data={farmerOptions}
+    
+         />
         <Button className="button-style" text="SUBMIT" onClick={handleSubmit} />
       </div>
       <div className="table-size">
