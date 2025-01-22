@@ -11,7 +11,7 @@ class Cultivator(Base):
     __tablename__='cultivator'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
-    companyid=Column(Integer,ForeignKey("farmercomodel.id") ,nullable=False)
+    companyid=Column(Integer,ForeignKey("farmer_company.id") ,nullable=False)
     active=Column(Boolean,nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     created_by = Column(String, nullable=False)
