@@ -21,15 +21,21 @@ export default function BasicTable({cultivators}) {
   console.log(cultivators)
   
     // Extract the map logic into a variable
-    const tableRows = cultivators[0]?.map((cultivator) => (
-      <TableRow key={cultivator.id}>
-        <TableCell component="th" scope="row">
-          {cultivator.id}
-        </TableCell>
-        <TableCell align="right">{cultivator.name}</TableCell>
-        <TableCell align="right">{cultivator.active ? 'Active' : 'Inactive'}</TableCell>
+    const tableRows = cultivators[0]?.length ? (
+      cultivators[0].map((cultivator) => (
+        <TableRow key={cultivator.id}>
+          <TableCell component="th" scope="row">
+            {cultivator.id}
+          </TableCell>
+          <TableCell align="right">{cultivator.name}</TableCell>
+          <TableCell align="right">{cultivator.active ? 'Active' : 'Inactive'}</TableCell>
+        </TableRow>
+      ))
+    ) : (
+      <TableRow>
+        <TableCell colSpan={4} className="no-data">No cultivators exist</TableCell>
       </TableRow>
-    ));
+    );
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
