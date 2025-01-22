@@ -16,10 +16,7 @@ class Farmer(Base):
     created_by = Column(String, nullable=False)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
     updated_by = Column(String, nullable=False)
-    # Relationship to Cultivators
-    cultivators = relationship("Cultivator", back_populates="farmer")
-
-
+  
 # Creation of initial farmer structure
 class FarmerSchema(BaseModel):
     name: str

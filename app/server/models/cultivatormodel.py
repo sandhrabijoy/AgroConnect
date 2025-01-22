@@ -4,7 +4,7 @@ from pydantic import BaseModel,Field
 from sqlalchemy.orm import relationship,sessionmaker,declarative_base,Session
 from sqlalchemy import create_engine,Column,Integer,String, Boolean, DateTime,ForeignKey
 
-Base=declarative_base()
+from app.server.database.database import Base
 
 #ORM model for cultivator
 class Cultivator(Base):
@@ -17,9 +17,7 @@ class Cultivator(Base):
     created_by = Column(String, nullable=False)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
     updated_by = Column(String, nullable=False)
-    # Relationship to Farmer
-    farmer = relationship("Farmer", back_populates="cultivators")
-
+   
 
 # Creation of initial cultivator structure
 class CultivatorSchema(BaseModel):
