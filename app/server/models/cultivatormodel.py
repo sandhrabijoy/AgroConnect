@@ -1,8 +1,7 @@
 from typing import Optional
 from datetime import date,datetime
-from pydantic import BaseModel,Field
-from sqlalchemy.orm import relationship,sessionmaker,declarative_base,Session
-from sqlalchemy import create_engine,Column,Integer,String, Boolean, DateTime,ForeignKey
+from pydantic import BaseModel
+from sqlalchemy import  Column,Integer,String, Boolean, DateTime,ForeignKey
 
 from app.server.database.database import Base
 
